@@ -2,41 +2,25 @@ package com.revature.calculator;
 
 public class Calculator {
 
-	public static double subtract(double ...a) {
-		double answer = a[0];
-		
-		for(int i =1; i< a.length; i++) {
-			answer = answer - a[i];
-		}
-		
-		
-
-
+	//Method for subtraction
+	public static double subtract(double a, double b) {
+		double answer = a-b;
 		return answer;
 	}
-
-	public static double add(double ...a) {
-		double answer = 0;
-
-
+	//Method for addition
+	public static double add(double a, double b) {
+		double answer = a+b;
 		return answer;
 	}
-
-	public static double multiply(double ...a) {
-		double answer = 0;
-
-
+	//method for multiplication
+	public static double multiply(double a, double b) {
+		double answer = a*b;
 		return answer;
-
-
 	}
-	
-	public static double divide(double ...a) {
-		double answer = 0;
-
-
+	//method for division
+	public static double divide(double a, double b) {
+		double answer = a/b;
 		return answer;
-		
 	}
 
 }
