@@ -1,0 +1,68 @@
+package com.revature.calculator;
+
+import java.util.ArrayList;
+import java.util.regex.*;
+
+public class Reader {
+	static ArrayList<String> numbers = new ArrayList<String>();
+	static ArrayList<String> arithmetic = new ArrayList<String>();
+	
+	public static void Search(String input) {
+		String numPattern = "\\\\d+";
+		String symPattern = "(\\+\\-\\*\\/)";
+		Pattern num = Pattern.compile(numPattern);
+		Pattern sym = Pattern.compile(symPattern);
+		Matcher numMat = num.matcher(input);
+		Matcher symMat = sym.matcher(input);
+		//int cursor = 0;
+		int numSelector = 0;
+		int symSelector = 0;
+		String current;
+		String concat = "";
+		String symConcat = "";
+		
+		
+		//Read for numbers
+		for (int i = 0; i < input.length(); i++) {
+			
+			//System.out.println("Beginning number search...");
+			if(numMat.find(i)) {
+				System.out.println("Character at " + i + " is a number.");
+				current = input.charAt(i) + "";
+				concat = concat + current;
+				System.out.println("Current concat is " + concat);
+				//cursor = cursor + 1;
+			}else {
+				System.out.println("Character at " + i + " is not a number.");
+				numbers.add(numSelector, (concat));
+				numSelector = numSelector + 1;
+				concat = "";
+			}
+			
+			
+		}
+		
+		for (int i = 0; i < input.length(); i++) {
+			//Searches for symbols
+			if(symMat.find(i)) {
+				System.out.println("Character at " + i + " is a symbol.");
+				current = input.charAt(i) + "";
+				symConcat = symConcat + current;
+				System.out.println("Current concat is " + symConcat);
+			}else {
+				System.out.println("Character at " + i + " is not a symbol.");
+				arithmetic.add(symSelector, (concat));
+				concat = "";
+			}
+		}
+		
+		
+		//Display Current Arraylist
+		/*for (int i = 0; i < numbers.size(); i++) {
+			
+		*/
+		System.out.println(numbers.toString());
+		
+	}
+	
+}

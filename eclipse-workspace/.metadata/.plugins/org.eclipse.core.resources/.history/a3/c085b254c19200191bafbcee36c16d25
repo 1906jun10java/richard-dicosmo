@@ -1,0 +1,10 @@
+package com.revature.stringpalindrome;
+
+public class StringDemo {
+//your repo: WeekB/Wednesday.java
+	public static void main(String[] args) {
+		
+
+	}
+
+}

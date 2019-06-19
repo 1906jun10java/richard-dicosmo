@@ -1,0 +1,40 @@
+package com.revature.calculator;
+
+import java.util.ArrayList;
+import java.util.regex.*;
+
+public class Reader {
+	static ArrayList<String> numbers = new ArrayList<String>();
+	static ArrayList<String> arithmetic = new ArrayList<String>();
+	
+	public static void Search(String input) {
+		Pattern num = Pattern.compile("0-9\\.");
+		Pattern sym = Pattern.compile("\\+\\-\\*\\/");
+		Matcher mat = num.matcher(input);
+		//int cursor = 0;
+		int selector = 0;
+		char current;
+		String concat = "";
+		
+		//Read for numbers
+		for (int i = 0; i < input.length(); i++) {
+			
+			if(mat.find(i) == true) {
+				current = input.charAt(i);
+				concat.concat(current + "");
+				//cursor = cursor + 1;
+			}else {
+				numbers.add(selector, (concat));
+				selector = selector + 1;
+			}
+			
+		}
+		//Display Current Arraylist
+		/*for (int i = 0; i < numbers.size(); i++) {
+			
+		*/
+		numbers.toString();
+		
+	}
+	
+}

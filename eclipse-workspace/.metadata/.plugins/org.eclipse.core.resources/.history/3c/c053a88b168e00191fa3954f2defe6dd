@@ -1,0 +1,22 @@
+package com.revature.beans;
+
+public class Car extends Vehicle implements Steerable{
+
+	private int yearManufactured;
+	private String make;
+	private String model;
+	
+	@Override
+	public void turnRight() {
+		System.out.println("turning wheel clockwise");
+		
+	}
+
+	@Override
+	public void turnLeft() {
+		System.out.println("turning wheel counter-clockwise");
+		
+	}
+
+	
+}

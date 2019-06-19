@@ -1,0 +1,18 @@
+package com.revature.beans;
+
+public class Car extends Vehicle implements Steerable{
+
+	@Override
+	public void turnRight() {
+		System.out.println();
+		
+	}
+
+	@Override
+	public void turnLeft() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}

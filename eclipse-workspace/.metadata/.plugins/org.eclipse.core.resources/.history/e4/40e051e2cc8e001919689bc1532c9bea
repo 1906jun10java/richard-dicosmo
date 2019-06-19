@@ -1,0 +1,45 @@
+package com.revature.calculator;
+
+import java.util.ArrayList;
+import java.util.regex.*;
+
+public class Reader {
+	static ArrayList<String> numbers = new ArrayList<String>();
+	static ArrayList<String> arithmetic = new ArrayList<String>();
+	
+	public static void Search(String input) {
+		String pattern = "[0-9]";
+		Pattern num = Pattern.compile(pattern);
+		//Pattern sym = Pattern.compile("\\+\\-\\*\\/");
+		Matcher numMat = num.matcher(input);
+		//int cursor = 0;
+		int selector = 0;
+		char current;
+		String concat = "";
+		
+		
+		//Read for numbers
+		for (int i = 0; i < input.length(); i++) {
+			System.out.println("Beginning number search...");
+			if(numMat.find(i)) {
+				System.out.println("Character at " + i + " is a number.");
+				current = input.charAt(i);
+				concat = concat + current;
+				System.out.println("Current concat is " + concat);
+				//cursor = cursor + 1;
+			}else {
+				System.out.println("Character at " + i + " is not a number.");
+				numbers.add(selector, (concat));
+				selector = selector + 1;
+			}
+			
+		}
+		//Display Current Arraylist
+		/*for (int i = 0; i < numbers.size(); i++) {
+			
+		*/
+		numbers.toString();
+		
+	}
+	
+}

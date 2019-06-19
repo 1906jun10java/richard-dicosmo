@@ -1,0 +1,53 @@
+package com.revature.collections;
+
+import java.util.ArrayList;
+import java.util.List;
+import com.revature.model.*;
+
+public class CollectionsDemo {
+
+	public static void main(String[] args) {
+		funWithLists();
+	}
+	
+	public static void funWithLists() {
+		/*
+		 * Lists:
+		 * 
+		 * - Lists are ordered Collections
+		 * - Duplicate elements are allowed
+		 * 
+		 * Some additional List features (beyond methods defined in Collection):
+		 * - Positional Access: access/manipulate elements based on position in List
+		 * - Search: search for an element and retrieve its numerical position
+		 * - Iteration: ListIterator() expands on capabilities of Iterator
+		 * - Range-view: access/manipulate subsets of the List
+		 * 
+		 */
+		
+		List<User> users = new ArrayList<>();
+		// generally want to use the super-type of whatever collection
+		//user is the type of each element in the List, replaces the generic type parameter in List<E> specification
+		
+		User u1 = new User("Gandalf", "Grey", "mirthrandir", "you_shall_not");
+		User u2 = new User("Paul", "Hewson", "bono", "u2RuleZ");
+		User u3 = new User("David", "Tennant", "doc10", "tardis");
+		
+		users.add(u1);
+		users.add(u2);
+		users.add(u3);
+		
+		//We have a addAll() method, but it takes a Collection as a parameter
+		
+		//duplicates are allowed, so the following should work:
+		
+		users.add(u2);
+		
+		for (User user: users) {
+			System.out.println(user);
+		}
+		
+		
+	}
+
+}

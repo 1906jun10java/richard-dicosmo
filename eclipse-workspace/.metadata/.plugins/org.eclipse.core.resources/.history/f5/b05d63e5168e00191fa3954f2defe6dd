@@ -1,0 +1,31 @@
+package com.revature.beans;
+
+public abstract class Vehicle {
+	
+	/*
+	 * Abstract class:
+	 * Cannot be instantiated
+	 * Can have both abstract and concrete methods
+	 * 
+	 * Alt-shift S for code generators 
+	 */
+	
+	private int topSpeed = 120; //setting a default value for instance field topSpeed
+	
+	
+
+	public int getTopSpeed() {
+		return topSpeed;
+	}
+
+	public void setTopSpeed(int topSpeed) {
+		this.topSpeed = topSpeed;
+	}
+	
+	//public abstract void move();
+	
+	
+	
+	
+	
+}

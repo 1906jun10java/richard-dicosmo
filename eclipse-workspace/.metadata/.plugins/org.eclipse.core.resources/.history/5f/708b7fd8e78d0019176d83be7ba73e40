@@ -1,0 +1,65 @@
+package fizzbuzz2;
+
+import java.io.EOFException;
+import java.util.Scanner;
+
+import java.util.Scanner;
+public class test {
+	
+	public static void main(String[] args) {
+		int r1;
+		int r2;
+		int d1;
+		int d2;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Input the min value");
+		while(!sc.hasNextInt()) {
+		System.out.println("Invalid Input try again");
+		sc.next();					//restarts the loop when invalid input is detected
+		}
+		r1 = sc.nextInt();
+		
+		System.out.println("Input the max value");
+		while(!sc.hasNextInt()) {
+		System.out.println("Invalid Input try again");
+		sc.next();
+		}
+		r2 = sc.nextInt();
+		
+		System.out.println("Input the fizz value");
+		while(!sc.hasNextInt()) {
+		System.out.println("Invalid Input try again");
+		sc.next();
+		}
+		d1 = sc.nextInt();
+		
+		System.out.println("Input the buzz number");
+		while(!sc.hasNextInt()) {
+		System.out.println("Invalid Input try again");
+		sc.next();
+		}
+		d2 = sc.nextInt();
+		
+		if(d1 == 0 || d2 == 0) {
+			System.out.println("divisor will be replaced with 1 as 0 is not valid  here ");
+			if(d1==0) {
+				d1 = 1;
+			}
+			else {
+				d2 = 1;
+			}
+		}
+		sc.close();
+	
+		
+		FizzBuzz fb = new FizzBuzz(r1,r2,d1,d2);
+		
+		fb.doFizzbuzz();
+		
+		
+
+	}
+
+}

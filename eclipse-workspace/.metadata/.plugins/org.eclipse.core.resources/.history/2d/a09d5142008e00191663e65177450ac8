@@ -1,0 +1,14 @@
+public class Test {
+	String[] a = new String[4];
+	public static void main(String[] args) {
+		input();
+	}
+	//method for inputting data in string array
+	
+	public static void input() {
+		for(String s : a) {
+			System.out.println(s);
+		}
+	}
+
+}

@@ -1,0 +1,51 @@
+package com.revature.collections;
+import com.revature.model.*;
+
+import java.util.HashSet;
+
+public class GroupOneHashSets {
+
+	public static void main(String[] args) {
+		hs();
+
+	}
+	
+	public static void hs() {
+		
+		HashSet<User> userSet = new HashSet<>();
+		
+		User u1 = new User("Gandalf", "Grey", "mirthrandir", "you_shall_not");
+		User u2 = new User("Paul", "Hewson", "bono", "u2RuleZ");
+		User u3 = new User("David", "Tennant", "doc10", "tardis");
+		
+		//.add method:
+		userSet.add(u1);
+		userSet.add(u2);
+		userSet.add(u3);
+		
+		for (User user : userSet) {
+			System.out.println(user);
+		}
+		
+		System.out.println(userSet.iterator());
+		
+		//.clear method clears the hashMap
+		userSet.clear();
+		
+		User u1 = new User("Joe", "Johnson", "thisguy", "that_guy");
+		User u2 = new User("Paul", "Mcendrix", "MeAmThatKindOfOrc", "thats_right");
+		User u3 = new User("David", "Doe", "deo", "doooh");
+		
+		//.add method:
+		userSet.add(u1);
+		userSet.add(u2);
+		userSet.add(u3);
+		
+		
+		
+		
+	}
+	
+	
+
+}

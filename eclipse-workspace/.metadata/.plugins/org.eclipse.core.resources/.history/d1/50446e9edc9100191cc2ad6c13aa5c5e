@@ -1,0 +1,91 @@
+package com.revature.collections;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Vector;
+
+import com.revature.model.*;
+
+public class CollectionsDemo {
+
+	public static void main(String[] args) {
+		funWithLists();
+	}
+	
+	public static void funWithLists() {
+		/*
+		 * Lists:
+		 * 
+		 * - Lists are ordered Collections
+		 * - Duplicate elements are allowed
+		 * 
+		 * Some additional List features (beyond methods defined in Collection):
+		 * - Positional Access: access/manipulate elements based on position in List
+		 * - Search: search for an element and retrieve its numerical position
+		 * - Iteration: ListIterator() expands on capabilities of Iterator
+		 * - Range-view: access/manipulate subsets of the List
+		 * 
+		 */
+		
+		List<User> users = new ArrayList<>();
+		// generally want to use the super-type of whatever collection
+		//user is the type of each element in the List, replaces the generic type parameter in List<E> specification
+		
+		User u1 = new User("Gandalf", "Grey", "mirthrandir", "you_shall_not");
+		User u2 = new User("Paul", "Hewson", "bono", "u2RuleZ");
+		User u3 = new User("David", "Tennant", "doc10", "tardis");
+		
+		users.add(u1);
+		users.add(u2);
+		users.add(u3);
+		
+		//We have a addAll() method, but it takes a Collection as a parameter
+		
+		//duplicates are allowed, so the following should work:
+		
+		users.add(u1);
+		//Displays all users from the list
+		for (User user: users) {
+			System.out.println(user);
+		}
+		
+		System.out.println("Size of list: " + users.size());
+		
+		System.out.println("-------------------------------------------------------------------------------------");
+		
+		//List of Integers
+		
+		List<Integer> integerList = new Vector<>();
+		
+		//Must use the wrapper class Integer to have numeric values
+		//Wrapper class - data type which wraps around a primitive value
+		//Every primitive data type has a corresponding wrapper class
+		
+		integerList.add(10); //implicitly converting from int (primitive to Integer(Object). This is called auto-boxing
+		integerList.add(-255);
+		integerList.add(new Integer(9)); // this is Not auto-boxing
+		integerList.add(75);
+		integerList.add(-12);
+		System.out.println("Integer List, inserted");
+		
+		for (Integer integer: integerList) {
+			System.out.println(integer);
+		}
+		/*
+		 * 
+		 * Collections utility class has static methods for operating on Collection objects.
+		 * 
+		 */
+		Collections.sort(integerList);
+		System.out.println("Integer List, sorted");
+		
+		for (Integer integer: integerList) {
+			System.out.println(integer);
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------");
+		
+	}
+
+}

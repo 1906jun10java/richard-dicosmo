@@ -1,0 +1,14 @@
+package com.revature.userInterface;
+import java.util.Scanner;
+
+public class MainUserControl {
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		String input;
+		System.out.println("Input an equation: ");
+		input = s.next();
+
+	}
+
+}

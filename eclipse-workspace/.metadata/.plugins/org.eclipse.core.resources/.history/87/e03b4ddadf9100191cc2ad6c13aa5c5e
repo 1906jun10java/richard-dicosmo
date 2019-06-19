@@ -1,0 +1,143 @@
+package com.revature.collections;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.Vector;
+
+import com.revature.model.*;
+
+public class CollectionsDemo {
+
+	public static void main(String[] args) {
+		funwithQueues();
+	}
+	
+	public static void funwithQueues() {
+		/*
+		 * Queue:
+		 * 
+		 * - Provide method for adding, removing, and inspecting elements
+		 * - Two versions for each of these behaviors: one which throws an exception if the operation fails,
+		 * and one which does not.
+		 * - Queues are FiFo (First in first out) except for priority queue which uses a comparator or elements' natural ordering
+		 * 
+		 */
+	}
+	
+	public static void funWithSets() {
+		/*
+		 * 
+		 * Sets:
+		 * 
+		 * - Sets are not ordered
+		 * - Duplicate elements are not allowed
+		 * - Two sets are equal if they have the same elements (enforced by equals() and haschcode() implementations)
+		 * 
+		 */
+		
+		Set<User> userSet = new HashSet<>();
+		
+		User u1 = new User("Gandalf", "Grey", "mirthrandir", "you_shall_not");
+		User u2 = new User("Paul", "Hewson", "bono", "u2RuleZ");
+		User u3 = new User("David", "Tennant", "doc10", "tardis");
+		
+		userSet.add(u1);
+		userSet.add(u2);
+		userSet.add(u3);
+		//no duplicates... addition of duplicate elements will be ignored.
+		userSet.add(u1); //same object (according to ==) as an existing element
+		User u4 = new User("David", "Tennant", "doc10", "tardis");
+		userSet.add(u4); //different object (according to ==) with the same fields as an existing element
+		
+		//both are ignored, it's the .equals() comparison that's being used (equality, not identity)
+		
+		for (User user : userSet) {
+			System.out.println(user);
+		}
+		
+		//Notice that insertion order is ignored
+	}
+	
+	public static void funWithLists() {
+		/*
+		 * Lists:
+		 * 
+		 * - Lists are ordered Collections
+		 * - Duplicate elements are allowed
+		 * 
+		 * Some additional List features (beyond methods defined in Collection):
+		 * - Positional Access: access/manipulate elements based on position in List
+		 * - Search: search for an element and retrieve its numerical position
+		 * - Iteration: ListIterator() expands on capabilities of Iterator
+		 * - Range-view: access/manipulate subsets of the List
+		 * 
+		 */
+		
+		List<User> users = new ArrayList<>();
+		// generally want to use the super-type of whatever collection
+		//user is the type of each element in the List, replaces the generic type parameter in List<E> specification
+		
+		User u1 = new User("Gandalf", "Grey", "mirthrandir", "you_shall_not");
+		User u2 = new User("Paul", "Hewson", "bono", "u2RuleZ");
+		User u3 = new User("David", "Tennant", "doc10", "tardis");
+		
+		users.add(u1);
+		users.add(u2);
+		users.add(u3);
+		
+		//We have a addAll() method, but it takes a Collection as a parameter
+		
+		//duplicates are allowed, so the following should work:
+		
+		users.add(u1);
+		//Displays all users from the list
+		for (User user: users) {
+			System.out.println(user);
+		}
+		
+		System.out.println("Size of list: " + users.size());
+		
+		System.out.println("-------------------------------------------------------------------------------------");
+		
+		//List of Integers
+		
+		List<Integer> integerList = new Vector<>();
+		
+		//Must use the wrapper class Integer to have numeric values
+		//Wrapper class - data type which wraps around a primitive value
+		//Every primitive data type has a corresponding wrapper class
+		
+		integerList.add(10); //implicitly converting from int (primitive to Integer(Object). This is called auto-boxing
+		integerList.add(-255);
+		integerList.add(new Integer(9)); // this is Not auto-boxing
+		integerList.add(75);
+		integerList.add(-12);
+		System.out.println("Integer List, inserted");
+		
+		for (Integer integer: integerList) {
+			System.out.println(integer);
+		}
+		/*
+		 * 
+		 * Collections utility class has static methods for operating on Collection objects.
+		 * 
+		 * sort() method:
+		 * must be used with a Collection of comparable elements
+		 * (or be provided a comparator for that data type)
+		 * 
+		 */
+		Collections.sort(integerList);
+		System.out.println("Integer List, sorted");
+		
+		for (Integer integer: integerList) {
+			System.out.println(integer);
+		}
+		
+		System.out.println("-------------------------------------------------------------------------------------");
+		
+	}
+
+}

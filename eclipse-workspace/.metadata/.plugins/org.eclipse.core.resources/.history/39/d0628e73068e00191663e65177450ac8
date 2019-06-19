@@ -1,0 +1,46 @@
+import java.util.Arrays;
+public class Test {
+	static double[] a = new double[4];
+	public static void main(String[] args) {
+		input();
+		System.out.println("Random Number List: ");
+		read();
+		sort();
+		System.out.println("Sort method called...");
+		System.out.println("Displaying sorted numbers (Using sort): ");
+		read();
+		System.out.println("Viewing the array with the toString() method: ");
+		search();
+		System.out.println("Setting all numbers to the same random value (Using fill): ");
+		resetNum();
+		read();
+		
+		
+	}
+	//method for inputting data in string array
+	
+	public static void input() {
+		for(int i = 0; i<a.length; i++) {
+			a[i] = Math.random()*100;
+		}
+	}
+	public static void read() {
+		for(double s : a) {
+			System.out.println(s);
+		}
+	}
+	public static void sort() {
+		Arrays.sort(a);
+	}
+	public static void search() {
+		//double indexSearch = 2;
+		System.out.println(Arrays.toString(a));
+	}
+	public static void resetNum() {
+		Arrays.fill(a, (Math.random()*100));
+	}
+	public static void fillRandom() {
+		Arrays.setAll(a, 2);
+	}
+
+}

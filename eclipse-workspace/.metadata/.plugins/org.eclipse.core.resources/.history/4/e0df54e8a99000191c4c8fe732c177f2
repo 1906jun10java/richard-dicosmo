@@ -1,0 +1,38 @@
+package com.revature.userInterface;
+import java.util.Scanner;
+import com.revature.calculator.*;
+
+public class MainUserControl {
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		Double first;
+		Double second;
+		String arith;
+		boolean checker;
+		/*String input;
+		*System.out.println("Input an equation: ");
+		*input = s.next();
+		*Reader.Search(input);
+		*/
+		
+		System.out.println("Input first number: ");
+		first = s.nextDouble();
+		System.out.println("Input second number: ");
+		second = s.nextDouble();
+		System.out.println("Input an arithmatic symbol (+, -, *, or /): ");
+		arith = s.next();
+		if(arith != "+" | arith != "-" | arith != "*" | arith != "/") {
+			System.out.println("Please input a correct arithmatic symbol (+, -, *, or /): ");
+			checker = false;
+		}else if(arith == "+" ) {
+			Calculator.add(first, second);
+		}else if(arith == "-" ) {
+			Calculator.subtract(first, second);
+		}else if(arith == "*" ) {
+			Calculator.multiply(first, second);
+		}
+		
+	}
+
+}

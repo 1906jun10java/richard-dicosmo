@@ -1,0 +1,23 @@
+public class Test {
+	static String[] a = new String[4];
+	public static void main(String[] args) {
+		input();
+		read();
+	}
+	//method for inputting data in string array
+	
+	public static void input() {
+		for(int i = 0; i<a.length; i++) {
+			a[i] = i + "";
+		}
+	}
+	public static void read() {
+		for(String s : a) {
+			System.out.println(s);
+		}
+	}
+	public static void search() {
+		
+	}
+
+}

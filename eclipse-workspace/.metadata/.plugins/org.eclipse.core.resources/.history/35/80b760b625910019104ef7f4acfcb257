@@ -1,0 +1,29 @@
+package com.revature.startup;
+import com.revature.fbmechanism.*;
+
+import java.util.Scanner;
+
+public class StartUp {
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int numOne;
+		int numTwo;
+		int fizz;
+		int buzz;
+		System.out.println("Select a number range: First Number ");
+		numOne = s.nextInt();
+		System.out.println("Select a number range: Second Number ");
+		numTwo = s.nextInt();
+		System.out.println("What multiple makes a fizz? ");
+		fizz = s.nextInt();
+		System.out.println("What multiple makes a buzz? ");
+		buzz = s.nextInt();
+		
+		
+		FizzBuzz fb = new FizzBuzz(numOne, numTwo, fizz, buzz);
+		fb.fizzBuzzBasic();
+
+	}
+
+}
