@@ -3,6 +3,8 @@ package com.revature.challanges;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+//Challange by: Richard and Travis
+
 public class ScannerCalculator {
 
 	public static void main(String[] args) {
