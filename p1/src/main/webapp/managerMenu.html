@@ -1,0 +1,85 @@
+<html>
+
+<head>
+	<meta charset="utf-8"/>
+        <title>Main Menu</title>
+        <meta name="viewport" content="width=device-width, intial-scale=1"/>
+        <link rel="stylesheet" href="p1Styles.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+<header>Employee Reimbursement System</header>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Manager Menu</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="main.html">Home</a>
+      <a class="nav-item nav-link" href="account.html">Personal View</a>
+      <a class="nav-item nav-link" href="employeeMenu.html">Employee View</a>
+	  <a class="nav-item nav-link" href="managerMenu.html" id="managerButton">Manager View<span class="sr-only">(current)</span></a>
+	  <a class="nav-item nav-link" href="logout">Logout</a>
+    </div>
+  </div>
+</nav>
+<div id="messages" style="color: red"></div>
+<div>Requests:</div>
+<table id="display" style="width:100%">
+  <tr>
+    <th>ID</th>
+    <th>Employee ID</th> 
+	<th>Title</th>
+	<th>Description</th>
+	<th>Status</th>
+	<th>Resolved By ID</th>
+  </tr>
+  
+</table>
+<div id="allRequests"></div>
+<br>
+<button type="button" class="btn btn-primary" id="refreshViewButton">Show All Requests</button><button type="button" class="btn btn-primary" id="getEmployeesButton">Show All Users</button><button type="button" class="btn btn-primary" id="refreshMyEmployeesButton">Show My Employee's Requests</button>
+<!-- Form for accepting or rejecting reimbursements based on ID-->
+ <form>
+                <div class="form-group">
+                      <label for="input">Accept or Reject Reimbursement a Request</label>
+					  <input  class="form-control" id="reimbursementID" aria-describedby="inputHelp" placeholder="Enter Reimbursement ID" name="reimbursementID" required>
+                </div>
+                    <button type="button" class="btn btn-primary" id="acceptRequestButton">Accept</button> <button type="button" class="btn btn-primary" id="denyRequestButton">Deny</button>
+			</form>
+<!-- Form for requesting reimbursements for a single user-->
+ <form>
+                <div class="form-group">
+                      <label for="input">Search for Single User Reimbursement Requests</label>
+					  <input  class="form-control" id="firstname" aria-describedby="inputHelp" placeholder="Enter First Name" name="firstname" required>
+						<input  class="form-control" id="lastname" aria-describedby="inputHelp" placeholder="Enter Last Name" name="lastname" required>
+                </div>
+                    <button type="button" class="btn btn-primary" id="searchSingleRSubmit">Submit</button>
+			</form>
+			
+<!--Form for creating a new Employee-->
+<br>
+<form>
+		
+                <div class="form-group">
+                      <label for="input">Create New Employee Account</label>
+					  <input  class="form-control" id="createFirstname" aria-describedby="inputHelp" placeholder="Enter First Name" name="createFirstname" required>
+						<input  class="form-control" id="createLastname" aria-describedby="inputHelp" placeholder="Enter Last Name" name="createLastname" required>
+						<input  class="form-control" id="createUsername" aria-describedby="inputHelp" placeholder="Enter Username" name="createUsername" required>
+						<input  class="form-control" id="createPassword" aria-describedby="inputHelp" placeholder="Enter Password" name="createPassword" required>
+						<input  class="form-control" id="createEmail" aria-describedby="inputHelp" placeholder="Enter Email" name="createEmail" required>
+						<input  class="form-control" id="createSeesto" aria-describedby="inputHelp" placeholder="Enter Manager ID" name="createSeesto">
+						<input  class="form-control" id="createTitle" aria-describedby="inputHelp" placeholder="Enter Employee Title" name="createTitle">
+                </div>
+                    <button type="button" class="btn btn-primary" id="createEmployeeButton">Submit</button>
+			</form>
+			
+</body>
+<!--My JavaScript-->
+<script src="scripts/managerScripts.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>
