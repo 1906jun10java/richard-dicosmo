@@ -110,7 +110,7 @@ public class AccountDAOImp implements AccountDAO{
 	@Override
 	public ArrayList<User> getAllUsers() throws SQLException {
 		Logger logger = Logger.getGlobal();
-		logger.info("This log worked");
+		logger.info("Getting all users");
 		ArrayList<User> userList = new ArrayList<User>();
 		Connection conn = cf.getConnection();
 		String sql = "SELECT USER_ID, FIRSTNAME, LASTNAME, EMAIL, SEES_TO, TITLE FROM USERS ORDER BY SEES_TO";
