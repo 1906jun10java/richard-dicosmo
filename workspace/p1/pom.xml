@@ -37,6 +37,8 @@
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc7</artifactId>
 			<version>12.1.0.2</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/externalJars/ojdbc7.jar</systemPath>
 		</dependency>
 		<!-- Jackson library allows us to convert between Java objects and JSON data -->
 		<dependency>
